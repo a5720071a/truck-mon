@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Entries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Truck</th>
+      <th>Air temp</th>
+      <th>Fridge temp</th>
+      <th>Location</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entries.each do |entry| %>
+      <tr>
+        <td><%= entry.truck %></td>
+        <td><%= entry.air_temp %></td>
+        <td><%= entry.fridge_temp %></td>
+        <td><%= entry.location %></td>
+        <td><%= link_to 'Show', entry %></td>
+        <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
+        <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Entry', new_entry_path %>
+
+
+
+<%= line_chart Entry.where(truck_id: 1).map { |entry| [entry.created_at,entry.air_temp] }, xtitle: "Time", ytitle: "Air temperature", colors: ["#0b0"], suffix: " °C" %>
+<%= line_chart Entry.where(truck_id: 1).map { |entry| [entry.created_at,entry.fridge_temp] }, xtitle: "Time", ytitle: "Fridge temperature"  %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  truck: one
+  air_temp: 9.99
+  fridge_temp: 
+  location: MyString
+
+two:
+  truck: two
+  air_temp: 9.99
+  fridge_temp: 
+  location: MyString

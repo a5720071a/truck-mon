@@ -1,0 +1,37 @@
+<%= form_with(model: entry, local: true) do |form| %>
+  <% if entry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
+
+      <ul>
+      <% entry.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :truck_id %>
+    <%= form.text_field :truck_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :air_temp %>
+    <%= form.text_field :air_temp %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fridge_temp %>
+    <%= form.text_field :fridge_temp %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

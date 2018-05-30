@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Truck:</strong>
+  <%= @entry.truck %>
+</p>
+
+<p>
+  <strong>Air temp:</strong>
+  <%= @entry.air_temp %>
+</p>
+
+<p>
+  <strong>Fridge temp:</strong>
+  <%= @entry.fridge_temp %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @entry.location %>
+</p>
+
+<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Back', entries_path %>

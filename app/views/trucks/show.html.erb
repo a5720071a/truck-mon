@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Truck name: <%= @truck.name %></h1>
+
+</br>
+
+<h2>Air temperature</h2>
+<%= line_chart @air_temp_entries, xtitle: "Time", ytitle: "Temperature", colors: ["#0b0"], suffix: " °C" %>
+<h2>Fridge temperature</h2>
+<%= line_chart @fridge_temp_entries, xtitle: "Time", ytitle: "Temperature", colors: ["#00b"], suffix: " °C" %>
+
+<div style="display:none;">
+  <div style="display:table-cell; width:50%;">
+    <h2>Air temperature</h2>
+    <%= line_chart @air_temp_entries, xtitle: "Time", ytitle: "Temperature", colors: ["#0b0"], suffix: " °C" %>
+  </div>
+  <div style="display:table-cell; width:50%;">
+    <h2>Fridge temperature</h2>
+    <%= line_chart @fridge_temp_entries, xtitle: "Time", ytitle: "Temperature", colors: ["#00b"], suffix: " °C" %>
+  </div>
+</div>
+
+</br>
+
+<div style='width: 100%;'>
+  <div id="map" style="width:500px; height:500px;"></div>
+</div>
+
+</br>
+
+<%= link_to 'Edit', edit_truck_path(@truck) %> |
+<%= link_to 'Back', trucks_path %>
