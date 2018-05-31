@@ -63,3 +63,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'chartkick'
 gem 'jquery-rails'
+gem 'underscore-rails'
+gem 'gmaps4rails'
+

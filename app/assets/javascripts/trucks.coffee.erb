@@ -1,0 +1,16 @@
+# Place all the behaviors and hooks related to the matching controller here.
+# All this logic will automatically be available in application.js.
+# You can use CoffeeScript in this file: http://coffeescript.org/
+
+$(document).on "turbolinks:load", ->
+  console.log("loaded")
+  handler = Gmaps.build('Google')
+  #handler.buildMap({ internal: {id: 'basic_map' }})
+  handler.buildMap { internal: {id: 'basic_map' }}, ->
+    markers = handler.addMarkers([
+    <% Entry.last(4).each do |entry| %>
+      { lat: <%= entry.location.split(',')[0] %>, lng: <%= entry.location.split(',')[1] %>},
+    <% end %>
+    ])
+    handler.bounds.extendWith(markers)
+    handler.fitMapToBounds()

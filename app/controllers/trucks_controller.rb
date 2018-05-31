@@ -10,7 +10,9 @@ class TrucksController < ApplicationController
   # GET /trucks/1
   # GET /trucks/1.json
   def show
+    #@air_temp_entries = Entry.where(truck_id: params[:id], created_at: 1.hour.ago..Time.now).map { |entry| [entry.created_at,entry.air_temp] }
     @air_temp_entries = Entry.where(truck_id: params[:id]).map { |entry| [entry.created_at,entry.air_temp] }
+    #@fridge_temp_entries = Entry.where(truck_id: params[:id], created_at: 1.hour.ago..Time.now).map { |entry| [entry.created_at,entry.fridge_temp] }
     @fridge_temp_entries = Entry.where(truck_id: params[:id]).map { |entry| [entry.created_at,entry.fridge_temp] }
   end
 
