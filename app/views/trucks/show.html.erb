@@ -22,9 +22,13 @@
 
 </br>
 
+<h2>Location</h2>
 <div style='width: 800px;'>
   <div id="basic_map" style='width: 800px; height: 400px;'></div>
 </div>
+<% @location_entries.each do |entry| %>
+  <%= hidden_field_tag "loc", entry %>
+<% end %>
 
 </br>
 
